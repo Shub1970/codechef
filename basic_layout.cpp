@@ -17,17 +17,70 @@ The first line of each test case contains two integers N and X - the number of e
 The second line of each test case contains N space-separated integers H1,H2,…,HN where Hi denotes the initial health points of ith enemy..
 */
 #include <iostream>
-#include <map>
+#include <vector>
+#include <numeric>
 #include <fstream>
 using namespace std;
+bool for_each(vector<int>::iterator beg, vector<int>::iterator end)
+{
+    bool test = true;
+    for (; beg != end; ++beg)
+    {
+        if (*beg > 0)
+        {
+            test = false;
+            break;
+        }
+    }
+    return test;
+}
 
 int main()
 {
     ofstream coutf("outputtxt.txt");
     ifstream cinf("inputtxt.txt");
+
     if (cinf.is_open())
     {
-        
+
+        int t;
+        cinf >> t;
+        while (t--)
+        {
+            int n, x;
+            cinf >> n >> x;
+            vector<int> h(n);
+            for (auto &i : h)
+            {
+                cinf >> i;
+            }
+            int max = 0;
+            for (auto i : h)
+            {
+                if (i > max)
+                    max = i;
+            }
+            int tim = 0;
+            while (!for_each(h.begin(), h.end()))
+            {
+                for (auto &i : h)
+                {
+                    if (i > 0)
+                    {
+                        i -= x;
+                        tim++;
+                    }
+                }
+            }
+            if (max > tim)
+            {
+                coutf << tim << endl;
+            }
+            else
+            {
+                coutf << max << endl;
+            }
+        }
     }
     else
     {
