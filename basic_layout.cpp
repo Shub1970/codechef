@@ -1,14 +1,13 @@
 /*
-The Mango Truck Problem Code: MANGOES
-Add problem to Todo list
-Submit
-You are given that a mango weighs X kilograms and a truck weighs Y kilograms. You want to cross a bridge that can withstand a weight of Z kilograms.
+Chef wants to buy a new laptop. However, he is confused about which laptop to buy out of 10 different laptops. He asks his N friends for their recommendation. The ith friend recommends the Chef to buy the Aithlaptop (1≤Ai≤10).
 
-Find the maximum number of mangoes you can load in the truck so that you can cross the bridge safely.
+Chef will buy the laptop which is recommended by maximum number of friends. Determine which laptop Chef buys.
+Print CONFUSED if there are multiple laptops having maximum number of recommendations.
 
 Input Format
-First line will contain T, the number of test cases. Then the test cases follow.
-Each test case consists of a single line of input, three integers X,Y,Z - the weight of mango, the weight of truck and the weight the bridge can withstand respectively.
+The first line contains a single integer T - the number of test cases. Then the test cases follow.
+The first line of each test case contains an integer N - the number of Chef's friends.
+The second line of each test case contains N space-separated integers A1,A2,…,AN where Ai denotes the recommendation of the ith friend.
 */
 #include <iostream>
 #include <vector>
@@ -21,15 +20,7 @@ int main()
     ifstream cinf("inputtxt.txt");
     if (cinf.is_open())
     {
-        int count;
-        cinf >> count;
-        while (count--)
-        {
-            int X, Y, Z;
-            cinf >> X >> Y >> Z;
-            int out = static_cast<int>((Z - Y) / X);
-            coutf << out << endl;
-        }
+       
     }
     else
     {
