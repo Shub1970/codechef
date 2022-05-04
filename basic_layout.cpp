@@ -1,13 +1,14 @@
 /*
-Roller Coaster Problem Code: MINHEIGHT
+The Mango Truck Problem Code: MANGOES
 Add problem to Todo list
 Submit
-Chef's son wants to go on a roller coaster ride. The height of Chef's son is X inches while the minimum height required to go on the ride is H inches. Determine whether he can go on the ride or not.
+You are given that a mango weighs X kilograms and a truck weighs Y kilograms. You want to cross a bridge that can withstand a weight of Z kilograms.
+
+Find the maximum number of mangoes you can load in the truck so that you can cross the bridge safely.
 
 Input Format
-The first line contains a single integer T - the number of test cases. Then the test cases follow.
-The first and only line of each test case contains two integers X and H - the height of Chef's son and the minimum height required for the ride respectively.
-
+First line will contain T, the number of test cases. Then the test cases follow.
+Each test case consists of a single line of input, three integers X,Y,Z - the weight of mango, the weight of truck and the weight the bridge can withstand respectively.
 */
 #include <iostream>
 #include <vector>
@@ -20,15 +21,6 @@ int main()
     ifstream cinf("inputtxt.txt");
     if (cinf.is_open())
     {
-        int count;
-        cinf >> count;
-        while (count--)
-        {
-            int X, H;
-            cinf >> X >> H;
-            string output = (X >= H) ? "YES" : "NO";
-            coutf << output << endl;
-        }
     }
     else
     {
