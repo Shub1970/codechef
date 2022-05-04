@@ -30,7 +30,26 @@ int main()
 
     if (cinf.is_open())
     {
-        
+
+        int t, n;
+        cinf >> t >> n;
+        while (t--)
+        {
+            vector<int> v(n);
+            int onecount = 0, zerocount = 0;
+            for (auto &i : v)
+            {
+                cinf >> i;
+                if (i == 1)
+                    onecount++;
+                else
+                    zerocount++;
+            }
+            if (onecount > zerocount)
+                coutf << 1 << endl;
+            else
+                coutf << 0 << endl;
+        }
     }
     else
     {
