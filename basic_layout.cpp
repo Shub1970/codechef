@@ -1,14 +1,22 @@
 /*
-Beat the Average Problem Code: ABOVEAVG
+Maximum OR Minimum Problem Code: MAXORMIN
 Add problem to Todo list
 Submit
-There are N students in a class. Recently, an exam on Advanced Algorithms was conducted with maximum score M and minimum score 0. The average score of the class was found out to be exactly X.
+Alice and Bob are ready to play a new game. Both the players take alternate turns. Alice starts first.
 
-Given that a student having score strictly greater than the average receives an A grade, find the maximum number of students that can receive an A grade.
+There are N binary numbers written on a blackboard.
+
+Alice, in her turn, erases any 2 numbers from the blackboard and writes the bitwise OR of those 2 numbers on the blackboard.
+Bob, in his turn, erases any 2 numbers from the blackboard and writes the bitwise AND of those 2 numbers on the blackboard.
+Note that, after each move, the count of numbers written on the blackboard reduces by 1.
+
+Both players play until a single number remains on the blackboard. Alice wants to maximise the remaining number while Bob wants to minimise the remaining number. Find the remaining number if both the players play optimally.
 
 Input Format
 First line will contain T, number of test cases. Then the test cases follow.
-The only line of each test case consists of three integers N,M,X - the number of students, the maximum score and the average score respectively.
+First line of each test case contains of a single integer N - the count of numbers written on the blackboard initially.
+Second line of each test case contains N space-separated integers A1,A2,…AN - the numbers written on the blackboard.
+Output Format
 */
 #include <iostream>
 #include <vector>
@@ -22,25 +30,7 @@ int main()
 
     if (cinf.is_open())
     {
-        int t;
-        cinf >> t;
-        while (t--)
-        {
-            int N, M, X;
-            cinf >> N >> M >> X;
-            if (X == M)
-            {
-                coutf << 0 << endl;
-            }
-            else
-            {
-                double total_marks = N * X;
-                double marks_above_avg = X + 1;
-                double no_of_students_with_A = total_marks / marks_above_avg;
-                int ans = static_cast<int>(no_of_students_with_A);
-                coutf << ans << endl;
-            }
-        }
+        
     }
     else
     {
