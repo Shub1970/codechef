@@ -12,7 +12,6 @@ The only line of each test case consists of three integers N,M,X - the number of
 */
 #include <iostream>
 #include <vector>
-#include <numeric>
 #include <fstream>
 using namespace std;
 
@@ -23,7 +22,25 @@ int main()
 
     if (cinf.is_open())
     {
-
+        int t;
+        cinf >> t;
+        while (t--)
+        {
+            int N, M, X;
+            cinf >> N >> M >> X;
+            if (X == M)
+            {
+                coutf << 0 << endl;
+            }
+            else
+            {
+                double total_marks = N * X;
+                double marks_above_avg = X + 1;
+                double no_of_students_with_A = total_marks / marks_above_avg;
+                int ans = static_cast<int>(no_of_students_with_A);
+                coutf << ans << endl;
+            }
+        }
     }
     else
     {
