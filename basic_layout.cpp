@@ -21,6 +21,15 @@ int main()
     ifstream cinf("inputtxt.txt");
     if (cinf.is_open())
     {
+        int count;
+        cinf >> count;
+        while (count--)
+        {
+            int X, Y, Z;
+            cinf >> X >> Y >> Z;
+            int out = static_cast<int>((Z - Y) / X);
+            coutf << out << endl;
+        }
     }
     else
     {
