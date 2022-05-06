@@ -1,25 +1,5 @@
-/*
-Maximum OR Minimum Problem Code: MAXORMIN
-Add problem to Todo list
-Submit
-Alice and Bob are ready to play a new game. Both the players take alternate turns. Alice starts first.
 
-There are N binary numbers written on a blackboard.
-
-Alice, in her turn, erases any 2 numbers from the blackboard and writes the bitwise OR of those 2 numbers on the blackboard.
-Bob, in his turn, erases any 2 numbers from the blackboard and writes the bitwise AND of those 2 numbers on the blackboard.
-Note that, after each move, the count of numbers written on the blackboard reduces by 1.
-
-Both players play until a single number remains on the blackboard. Alice wants to maximise the remaining number while Bob wants to minimise the remaining number. Find the remaining number if both the players play optimally.
-
-Input Format
-First line will contain T, number of test cases. Then the test cases follow.
-First line of each test case contains of a single integer N - the count of numbers written on the blackboard initially.
-Second line of each test case contains N space-separated integers A1,A2,…AN - the numbers written on the blackboard.
-Output Format
-*/
 #include <iostream>
-#include <vector>
 #include <fstream>
 using namespace std;
 
@@ -35,20 +15,16 @@ int main()
         cinf >> t >> n;
         while (t--)
         {
-            vector<int> v(n);
-            int onecount = 0, zerocount = 0;
-            for (auto &i : v)
+            int X, Y;
+            cin >> X >> Y;
+            if ((abs(X - Y) == 0) && (X > 0) || (X > 0))
             {
-                cinf >> i;
-                if (i == 1)
-                    onecount++;
-                else
-                    zerocount++;
+                cout << "YES" << endl;
             }
-            if (onecount > zerocount)
-                coutf << 1 << endl;
             else
-                coutf << 0 << endl;
+            {
+                cout << "NO" << endl;
+            }
         }
     }
     else
