@@ -14,17 +14,10 @@ int main()
         cinf >> t;
         while (t--)
         {
-            int fastest_finist, chef_finist;
-            cinf >> fastest_finist >> chef_finist;
-            double per = static_cast<double>(107) / 100 * fastest_finist;
-            if (chef_finist <= per)
-            {
-                coutf << "yes" << endl;
-            }
-            else
-            {
-                coutf << "NO" << endl;
-            }
+            int N;
+            cinf >> N;
+            double profit = static_cast<double>(30) / 100 * N * 50;
+            coutf << profit << endl;
         }
     }
     else
