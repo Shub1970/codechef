@@ -11,19 +11,19 @@ int main()
     if (cinf.is_open())
     {
 
-        int t, n;
-        cinf >> t >> n;
+        int t;
+        cinf >> t;
         while (t--)
         {
             int X, Y;
-            cin >> X >> Y;
-            if ((abs(X - Y) == 0) && (X > 0) || (X > 0))
+            cinf >> X >> Y;
+            if ((abs(X - Y) == 0) && (X > 0) || (Y > 0))
             {
-                cout << "YES" << endl;
+                coutf << "YES" << endl;
             }
             else
             {
-                cout << "NO" << endl;
+                coutf << "NO" << endl;
             }
         }
     }
@@ -31,5 +31,7 @@ int main()
     {
         cout << "Unable to open file";
     }
+    coutf.close();
+    cinf.close();
     return 0;
 }
