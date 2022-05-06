@@ -1,4 +1,6 @@
-YES
+1.07
 NO
+yes
+16.05
 NO
-YES
+yes

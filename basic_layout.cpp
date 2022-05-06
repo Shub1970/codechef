@@ -10,16 +10,16 @@ int main()
 
     if (cinf.is_open())
     {
-
         int t;
         cinf >> t;
         while (t--)
         {
-            int X, Y;
-            cinf >> X >> Y;
-            if ((abs(X - Y) == 0) && (X > 0) || (Y > 0))
+            int fastest_finist, chef_finist;
+            cinf >> fastest_finist >> chef_finist;
+            double per = static_cast<double>(107) / 100 * fastest_finist;
+            if (chef_finist <= per)
             {
-                coutf << "YES" << endl;
+                coutf << "yes" << endl;
             }
             else
             {
