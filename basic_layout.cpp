@@ -1,6 +1,9 @@
 
 #include <iostream>
 #include <fstream>
+#include <unordered_map>
+#include <vector>
+#include <set>
 using namespace std;
 
 int main()
@@ -14,17 +17,48 @@ int main()
         cinf >> test;
         while (test--)
         {
-            int Length_of_track, initial, final;
-            cinf >> initial >> final >> Length_of_track;
-            int forward_length = abs(final - initial);
-            int bakward_length = abs(Length_of_track - forward_length);
-            if (forward_length > bakward_length)
+            int length;
+            cinf >> length;
+            vector<int> A;
+            vector<int> B;
+            set<pair<int, int>> ans;
+            for (int i = 0; i < length; i++)
             {
-                coutf << bakward_length << endl;
+                int temp;
+                cinf >> temp;
+                A.push_back(temp);
             }
-            else
+            for (int i = 0; i < length; i++)
             {
-                coutf << forward_length << endl;
+                int temp;
+                cinf >> temp;
+                B.push_back(temp);
+            }
+            unordered_map<int, vector<int>> stairs;
+            for (int i = 0; i < length; i++)
+            {
+                stairs[A[i]].push_back(i);
+            }
+            for (int i = 0; i < length; i++)
+            {
+                if (stairs[B[i]].size() > 0)
+                {
+                    for (auto r : stairs[B[i]])
+                    {
+                        if (r != i)
+                        {
+                            ans.insert({i, r});
+                        }
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            for (auto r : ans)
+            {
+                coutf << r.first << " " << r.second << endl;
             }
         }
     }
