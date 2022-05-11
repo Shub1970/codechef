@@ -56,10 +56,8 @@ int main()
                     continue;
                 }
             }
-            for (auto r : ans)
-            {
-                coutf << r.first << " " << r.second << endl;
-            }
+            int final_answer = ans.size() / 2;
+            coutf << final_answer << endl;
         }
     }
     else
