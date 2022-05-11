@@ -10,14 +10,20 @@ int main()
 
     if (cinf.is_open())
     {
-        int t;
-        cinf >> t;
-        while (t--)
+        int T;
+        cinf >> T;
+        while (T--)
         {
-            int N;
-            cinf >> N;
-            double profit = static_cast<double>(30) / 100 * N * 50;
-            coutf << profit << endl;
+            int X;
+            cinf >> X;
+            if (X > 30)
+            {
+                coutf << "yes" << endl;
+            }
+            else
+            {
+                coutf << "no" << endl;
+            }
         }
     }
     else
