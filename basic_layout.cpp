@@ -21,7 +21,7 @@ int main()
             cinf >> length;
             vector<int> A;
             vector<int> B;
-            set<pair<int, int>> ans;
+            int ans = 0;
             for (int i = 0; i < length; i++)
             {
                 int temp;
@@ -47,7 +47,7 @@ int main()
                     {
                         if (r != i)
                         {
-                            ans.insert({i, r});
+                            ans++;
                         }
                     }
                 }
@@ -56,8 +56,7 @@ int main()
                     continue;
                 }
             }
-            int final_answer = ans.size() / 2;
-            coutf << final_answer << endl;
+            coutf << ans / 2 << endl;
         }
     }
     else
