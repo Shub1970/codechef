@@ -14,15 +14,17 @@ int main()
         cinf >> test;
         while (test--)
         {
-            int a, b, c;
-            cinf >> a >> b >> c;
-            if (a + b < c || a + c < b || b + c < a)
+            int Length_of_track, initial, final;
+            cinf >> initial >> final >> Length_of_track;
+            int forward_length = abs(final - initial);
+            int bakward_length = abs(Length_of_track - forward_length);
+            if (forward_length > bakward_length)
             {
-                coutf << "yes" << endl;
+                coutf << bakward_length << endl;
             }
             else
             {
-                coutf << "no" << endl;
+                coutf << forward_length << endl;
             }
         }
     }
