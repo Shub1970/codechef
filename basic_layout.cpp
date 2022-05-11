@@ -14,15 +14,15 @@ int main()
         cinf >> test;
         while (test--)
         {
-            int n, x, k;
-            cinf >> n >> x >> k;
-            if (n * x <= k)
+            int a, b, c;
+            cinf >> a >> b >> c;
+            if (a + b < c || a + c < b || b + c < a)
             {
-                coutf << "YES" << endl;
+                coutf << "yes" << endl;
             }
             else
             {
-                coutf << "NO" << endl;
+                coutf << "no" << endl;
             }
         }
     }
