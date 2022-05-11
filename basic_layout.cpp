@@ -10,19 +10,19 @@ int main()
 
     if (cinf.is_open())
     {
-        int T;
-        cinf >> T;
-        while (T--)
+        int test;
+        cinf >> test;
+        while (test--)
         {
-            int X;
-            cinf >> X;
-            if (X > 30)
+            int n, x, k;
+            cinf >> n >> x >> k;
+            if (n * x <= k)
             {
-                coutf << "yes" << endl;
+                coutf << "YES" << endl;
             }
             else
             {
-                coutf << "no" << endl;
+                coutf << "NO" << endl;
             }
         }
     }
