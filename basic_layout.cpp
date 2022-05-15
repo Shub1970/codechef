@@ -14,11 +14,10 @@ int main()
     if (cinf.is_open())
     {
         int test;
-        cin >> test;
+        cinf >> test;
         while (test--)
         {
-            int total_proble;
-            cinf >> total_proble;
+
             int array_length;
             cinf >> array_length;
             int remove_problem = 0;
