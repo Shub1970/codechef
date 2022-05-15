@@ -14,10 +14,12 @@ int main()
     if (cinf.is_open())
     {
         int test;
-        cinf >> test;
+        cin >> test;
         while (test--)
         {
-            
+            int total_problem, total_solve;
+            cin >> total_problem >> total_solve;
+            cout << total_problem - total_solve << endl;
         }
     }
     else
