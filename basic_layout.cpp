@@ -38,9 +38,9 @@ int main()
             int max_value = 0;
             for (int i = 0; i < array_size; i++)
             {
-                for (int j = i + 1; j < array_size; j++)
+                for (int j = 0; j < array_size; j++)
                 {
-                    int temp = mods(arr[i], arr[j], M);
+                    int temp = arr[i] + arr[j] + mods(arr[i], arr[j], M);
                     if (temp > max_value)
                     {
                         max_value = temp;
