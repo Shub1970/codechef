@@ -17,23 +17,22 @@ int main()
         cinf >> test;
         while (test--)
         {
-
-            int array_length;
-            cinf >> array_length;
-            int remove_problem = 0;
-            int *array = new int[array_length];
-            for (int i = 0; i < array_length; i++)
+            int initial_level, max_capacity, speed, time;
+            cinf >> initial_level >> max_capacity >> speed >> time;
+            int space = max_capacity - initial_level;
+            int extra_water = speed * time;
+            if (space == extra_water)
             {
-                cinf >> array[i];
+                coutf << "filled" << endl;
             }
-            for (int i = 0; i < array_length; i++)
+            else if (space > extra_water)
             {
-                if (array[i] >= 1000)
-                {
-                    remove_problem++;
-                }
+                coutf << "unfilled" << endl;
             }
-            coutf << remove_problem << endl;
+            else
+            {
+                coutf << "overFlow" << endl;
+            }
         }
     }
     else
