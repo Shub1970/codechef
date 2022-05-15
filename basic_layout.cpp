@@ -17,14 +17,29 @@ int main()
         cin >> test;
         while (test--)
         {
-            int total_problem, total_solve;
-            cin >> total_problem >> total_solve;
-            cout << total_problem - total_solve << endl;
+            int total_proble;
+            cinf >> total_proble;
+            int array_length;
+            cinf >> array_length;
+            int remove_problem = 0;
+            int *array = new int[array_length];
+            for (int i = 0; i < array_length; i++)
+            {
+                cinf >> array[i];
+            }
+            for (int i = 0; i < array_length; i++)
+            {
+                if (array[i] >= 1000)
+                {
+                    remove_problem++;
+                }
+            }
+            coutf << remove_problem << endl;
         }
     }
     else
     {
-        cout << "Unable to open file";
+        coutf << "Unable to open file";
     }
     coutf.close();
     cinf.close();
