@@ -5,7 +5,17 @@
 #include <vector>
 #include <set>
 using namespace std;
-
+int mods(int a, int b, int M)
+{
+    if (a >= b)
+    {
+        return (a - b) % M;
+    }
+    else
+    {
+        return ((a - b) % M + M) % M;
+    }
+}
 int main()
 {
     ofstream coutf("outputtxt.txt");
@@ -15,24 +25,29 @@ int main()
     {
         int test;
         cinf >> test;
+
         while (test--)
         {
-            int initial_level, max_capacity, speed, time;
-            cinf >> initial_level >> max_capacity >> speed >> time;
-            int space = max_capacity - initial_level;
-            int extra_water = speed * time;
-            if (space == extra_water)
+            int array_size, M;
+            cinf >> array_size >> M;
+            int *arr = new int[array_size];
+            for (int i = 0; i < array_size; i++)
             {
-                coutf << "filled" << endl;
+                cinf >> arr[i];
             }
-            else if (space > extra_water)
+            int max_value = 0;
+            for (int i = 0; i < array_size; i++)
             {
-                coutf << "unfilled" << endl;
+                for (int j = i + 1; j < array_size; j++)
+                {
+                    int temp = mods(arr[i], arr[j], M);
+                    if (temp > max_value)
+                    {
+                        max_value = temp;
+                    }
+                }
             }
-            else
-            {
-                coutf << "overFlow" << endl;
-            }
+            coutf << max_value << endl;
         }
     }
     else
