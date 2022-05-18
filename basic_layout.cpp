@@ -24,17 +24,25 @@ int main()
         cinf >> test;
         while (test--)
         {
-            int current_rating;
-            cinf >> current_rating;
-            int final_rating;
-            cinf >> final_rating;
-            if ((final_rating - current_rating) % 8 == 0)
+            int size;
+            cinf >> size;
+            int start38 = 0;
+            int ltime108 = 0;
+            while (size--)
             {
-                coutf << (final_rating - current_rating) / 8 << endl;
-            }
-            else
-            {
-                coutf << (final_rating - current_rating) / 8 + 1 << endl;
+                string temp;
+                cinf >> temp;
+                if (temp == "START38")
+                {
+                    start38++;
+                }
+                else
+                {
+                    if (temp == "LIGHT108")
+                    {
+                        ltime108++;
+                    }
+                }
             }
         }
     }
