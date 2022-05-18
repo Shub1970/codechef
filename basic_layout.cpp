@@ -1,18 +1,8 @@
 
 #include <iostream>
+#include <vector>
 #include <fstream>
 using namespace std;
-int mods(int a, int b, int M)
-{
-    if (a >= b)
-    {
-        return (a - b) % M;
-    }
-    else
-    {
-        return ((a - b) % M + M) % M;
-    }
-}
 int main()
 {
     ofstream coutf("outputtxt.txt");
@@ -24,27 +14,27 @@ int main()
         cinf >> test;
         while (test--)
         {
-            int size;
-            cinf >> size;
-            int start38 = 0;
-            int ltime108 = 0;
-            while (size--)
+            int no_frame = 0;
+            cinf >> no_frame;
+            vector<int> frame;
+            while (no_frame--)
             {
-                string temp;
+                int temp;
                 cinf >> temp;
-                if (temp == "START38")
+                frame.push_back(temp);
+            }
+            int min_frame = 0;
+            for (auto x : frame)
+            {
+                if (x != min_frame)
                 {
-                    start38++;
+                    min_frame++;
                 }
                 else
                 {
-                    if (temp == "LTIME108")
-                    {
-                        ltime108++;
-                    }
+                    continue;
                 }
             }
-            coutf << start38 << " " << ltime108 << endl;
         }
     }
     else
