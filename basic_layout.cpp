@@ -38,12 +38,13 @@ int main()
                 }
                 else
                 {
-                    if (temp == "LIGHT108")
+                    if (temp == "LTIME108")
                     {
                         ltime108++;
                     }
                 }
             }
+            coutf << start38 << " " << ltime108 << endl;
         }
     }
     else
