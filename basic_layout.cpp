@@ -49,15 +49,19 @@ int main()
             long long int n = 1;
             for (auto x : st)
             {
-                if (x != 'a' || x != 'e' || x != 'i' || x != 'o' || x != 'u')
+                if (x != 'a' && x != 'e' && x != 'i' && x != 'o' && x != 'u')
                 {
                     if (range(x).first == range(x).second)
                     {
                         n = n * 2;
                     }
+                    else
+                    {
+                        n = n * 1;
+                    }
                 }
             }
-            return n % (1000000007);
+            coutf << n % (1000000007) << endl;
         }
     }
     else
