@@ -1,3 +1,9 @@
-1
+4
 5
-abeftuxyz
+aeiou
+5
+abcde
+8
+starters
+8
+codechef
