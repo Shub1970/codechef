@@ -20,7 +20,24 @@ int main()
 
     if (cinf.is_open())
     {
+        int test;
+        cinf >> test;
+        while (test--)
+        {
+            int current_rating;
+            cinf >> current_rating;
+            int final_rating;
+            cinf >> final_rating;
+            if ((final_rating - current_rating) % 8 == 0)
+            {
+                coutf << (final_rating - current_rating) / 8 << endl;
+            }
+            else
+            {
+                coutf << (final_rating - current_rating) / 8 + 1 << endl;
+            }
         }
+    }
     else
     {
         coutf << "Unable to open file";
