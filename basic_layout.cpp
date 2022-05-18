@@ -1,9 +1,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <unordered_map>
-#include <vector>
-#include <set>
 using namespace std;
 int mods(int a, int b, int M)
 {
@@ -23,33 +20,7 @@ int main()
 
     if (cinf.is_open())
     {
-        int test;
-        cinf >> test;
-
-        while (test--)
-        {
-            int array_size, M;
-            cinf >> array_size >> M;
-            int *arr = new int[array_size];
-            for (int i = 0; i < array_size; i++)
-            {
-                cinf >> arr[i];
-            }
-            int max_value = 0;
-            for (int i = 0; i < array_size; i++)
-            {
-                for (int j = 0; j < array_size; j++)
-                {
-                    int temp = arr[i] + arr[j] + mods(arr[i], arr[j], M);
-                    if (temp > max_value)
-                    {
-                        max_value = temp;
-                    }
-                }
-            }
-            coutf << max_value << endl;
         }
-    }
     else
     {
         coutf << "Unable to open file";
