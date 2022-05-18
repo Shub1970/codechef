@@ -42,26 +42,14 @@ int main()
         cinf >> test;
         while (test--)
         {
-            int size;
-            cinf >> size;
-            string st;
-            cinf >> st;
-            long long int n = 1;
-            for (auto x : st)
+            int test;
+            cinf >> test;
+            while (test--)
             {
-                if (x != 'a' && x != 'e' && x != 'i' && x != 'o' && x != 'u')
-                {
-                    if (range(x).first == range(x).second)
-                    {
-                        n = n * 2;
-                    }
-                    else
-                    {
-                        n = n * 1;
-                    }
-                }
+                int X, Y;
+                cinf >> X >> Y;
+                coutf << max((500 - X * 2) + (1000 - (Y + X) * 4), (1000 - Y * 4 + (500 - (X + Y) * 2)));
             }
-            coutf << n % (1000000007) << endl;
         }
     }
     else
