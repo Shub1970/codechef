@@ -14,7 +14,7 @@ int main()
         cinf >> test;
         while (test--)
         {
-            int no_frame = 0;
+            int no_frame;
             cinf >> no_frame;
             vector<int> frame;
             while (no_frame--)
@@ -24,10 +24,12 @@ int main()
                 frame.push_back(temp);
             }
             int min_frame = 0;
+            int repeat_frame = 0;
             for (auto x : frame)
             {
-                if (x != min_frame)
+                if (x != repeat_frame)
                 {
+                    repeat_frame = x;
                     min_frame++;
                 }
                 else
@@ -35,6 +37,7 @@ int main()
                     continue;
                 }
             }
+            coutf << min_frame << endl;
         }
     }
     else
